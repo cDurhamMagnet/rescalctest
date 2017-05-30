@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<popups>
+  <style></style>
+  <width>250</width>
+  <height>100</height>
+
+  <popup>
+    <title>Objective</title>
+    <content>Please visit our page to learn about microscope objectives</content>
+    <link>https://www.microscopyu.com/microscopy-basics/microscope-objective-specifications</link>
+  </popup>
+  <popup>
+    <title>Media</title>
+    <content>The immersion medium corresponding with selected objective.  Learn more about immersion media and refractive index here</content>
+    <link>https://www.microscopyu.com/tutorials/immersion</link>
+  </popup>
+  <popup>
+    <title>NA</title>
+    <content>Numerical Aperture (NA) is a unit-less measurement of the light gathering ability of an objective lens.  Learn more about NA here</content>
+    <link>https://www.microscopyu.com/microscopy-basics/numerical-aperture</link>
+  </popup>
+  <popup>
+    <title>Field of View</title>
+    <content>Field of View is the diameter of the illuminated field measured at the intermediate image plane.  Learn more about FOV here</content>
+    <link>https://www.microscopyu.com/microscopy-basics/field-of-view</link>
+  </popup>
+  <popup>
+    <title>Exmax / Emmax</title>
+    <content>The excitation/emission maximum (Exmax) is the wavelength of maximum absorption/emission by a fluorescent molecule, measured in nanometers (nm).  Learn more about fluorescence microscopy here</content>
+    <link>https://www.microscopyu.com/techniques/fluorescence/introduction-to-fluorescence-microscopy</link>
+  </popup>
+  <popup>
+    <title>Emmax</title>
+    <content> The emission maximum (Emmax) is the wavelength of maximum emission by a fluorescent molecule, measured in nanometers (nm).  Learn more about fluorescence microscopy here</content>
+    <link>https://www.microscopyu.com/techniques/fluorescence/introduction-to-fluorescence-microscopy</link>
+  </popup>
+  <popup>
+    <title>Camera</title>
+    <content>This list contains common CCD, EM-CCD, and sCMOS camera models for use with light microscopes.  Learn more about digital imaging here</content>
+    <link>https://www.microscopyu.com/digital-imaging/fundamentals-of-digital-imaging</link>
+  </popup>
+  <popup>
+    <title>Binning</title>
+    <content>The accumulated charge from adjacent camera pixels may be combined to form a reduced number of “superpixels”.  Learn more about binning and other digital camera functions here</content>
+    <link>https://www.microscopyu.com/digital-imaging/introduction-to-charge-coupled-devices-ccds</link>
+  </popup>
+  <popup>
+    <title>Camera Relay</title>
+    <content>Relay optics may be used to provide additional image magnification.  Learn more about magnification here</content>
+    <link>https://www.microscopyu.com/microscopy-basics/useful-magnification-range</link>
+  </popup>
+  <popup>
+    <title>Illumination</title>
+    <content> Illumination may be performed in a transmitted light (diascopic) or reflected light (episcopic) geometry.  Learn more about the microscope optical train here</content>
+    <link>https://www.microscopyu.com/microscopy-basics/components</link>
+  </popup>
+  <popup>
+
+    <title>Modality</title>
+    <content>Three different episcopic imaging modes are available for selection widefield, spinning disk confocal, and point-scanning confocal.  Learn more about confocal microscopy here</content>
+    <link>https://www.microscopyu.com/techniques/confocal/introductory-confocal-concepts</link>
+  </popup>
+  <popup>
+    <title>Active Pixels</title>
+    <content> Expressed as the number of pixels in the x and y directions, respectively, on the camera chip.  Refers to number of pixels scanned in x and y directions for point-scanning confocals.  Learn more about digital cameras here</content>
+    <link>https://www.microscopyu.com/digital-imaging/introduction-to-charge-coupled-devices-ccds</link>
+  </popup>
+  <popup>
+    <title>Real Pixel Size</title>
+    <content>The actual size of each pixel on the camera.  Learn more about digital cameras here</content>
+    <link>https://www.microscopyu.com/digital-imaging/introduction-to-charge-coupled-devices-ccds</link>
+  </popup>
+  <popup>
+    <title>Backprojected Pixel Size</title>
+    <content>This is the virtual, de-magnified size of a camera pixel when back-projected into the specimen plane.  Learn more about digital cameras here</content>
+    <link>https://www.microscopyu.com/digital-imaging/introduction-to-charge-coupled-devices-ccds</link>
+  </popup>
+  <popup>
+    <title>Sensor Dimensions</title>
+    <content>This is the physical length and width of the camera chip, expressed in millimeters (mm).  Learn more about digital cameras here</content>
+    <link>https://www.microscopyu.com/digital-imaging/introduction-to-charge-coupled-devices-ccds</link>
+  </popup>
+  <popup>
+    <title>Illuminated Sample Imaged</title>
+    <content>This is proportion of the total illuminated area imaged by the camera and expressed as a percentage.  A field diaphragm may be used to limit illumination to the imaged area.  Learn more about FOV here</content>
+    <link>https://www.microscopyu.com/microscopy-basics/field-of-view</link>
+  </popup>
+  <popup>
+    <title>Total Magnification</title>
+    <content>The total magnification of the imaging system, found by taking the product of the objective magnification and any additional camera relay magnification (or zoom for point-scanning confocal).  Learn more about magnification here</content>
+    <link>https://www.microscopyu.com/microscopy-basics/useful-magnification-range</link>
+  </popup>
+  <popup>
+    <title>Lateral Resolution</title>
+    <content>Lateral resolution refers to the optical resolution in the x and y directions and values calculated using the Rayleigh Criterion.  Learn more about resolution here</content>
+    <link>https://www.microscopyu.com/microscopy-basics/resolution</link>
+  </popup>
+  <popup>
+    <title>Axial Resolution</title>
+    <content>Axial resolution refers to the optical resolution in the z directions and values calculated using the Rayleigh Criterion.  Learn more about resolution here</content>
+    <link>https://www.microscopyu.com/microscopy-basics/resolution</link>
+  </popup>
+  <popup>
+    <title>Sampling Rate</title>
+    <content>The sampling rate is provided as the ratio of the calculated lateral resolution to the size of the back-projected pixel.  Learn about Nyquist Sampling here</content>
+    <link>https://www.microscopyu.com/tutorials/spatial-resolution-in-digital-imaging</link>
+  </popup>
+  <popup>
+    <title>Brightness</title>
+    <content>Brightness is a unit-less value describing the light-gathering power of the objective.  Learn more about brightness here</content>
+    <link>https://www.microscopyu.com/microscopy-basics/image-brightness</link>
+  </popup>
+  <popup>
+    <title>Pinhole Diameter</title>
+    <content>The actual diameter of the pinhole aperture(s) in a spinning disk or point-scanning confocal microscope.  Learn more about the confocal pinhole here</content>
+    <link>https://www.microscopyu.com/techniques/confocal/introductory-confocal-concepts</link>
+  </popup>
+  <popup>
+    <title>Backprojected Pinhole Radius</title>
+    <content>The radius of the image of the confocal pinhole projected into the specimen plane.  Learn more about the confocal pinhole here</content>
+    <link>https://www.microscopyu.com/techniques/confocal/introductory-confocal-concepts</link>
+  </popup>
+  <popup>
+    <title>Airy Units</title>
+    <content>Airy Units (AU) is calculated by finding the ratio of the back-projected pinhole radius to the radius of the Airy Disk formed by a single emitter.  If AU = 1, then the back-projected pinhole radius is equal to the radius of the Airy Disk.  Learn more about the confocal pinhole here</content>
+    <link>https://www.microscopyu.com/techniques/confocal/introductory-confocal-concepts</link>
+  </popup>
+  <popup>
+    <title>Condenser Media</title>
+    <content>This refers to the condenser lens immersion medium, typically either air or oil.  Learn more about the microscope optical train here</content>
+    <link>https://www.microscopyu.com/microscopy-basics/components</link>
+  </popup>
+  <popup>
+    <title>Condenser NA</title>
+    <content>The numerical aperture (NA) of the condenser lens.  Learn more about the microscope optical train here</content>
+    <link>https://www.microscopyu.com/microscopy-basics/components</link>
+  </popup>
+  <popup>
+    <title>Model</title>
+    <content>Information on Nikon confocal microscopes may be found here</content>
+    <link>https://www.nikoninstruments.com/Products/Confocal-Microscopes</link>
+  </popup>
+  <popup>
+    <title>Active Pixels (x)</title>
+    <content>The number of pixels the image is partitioned into along the length of the x-axis.</content>
+    <link></link>
+  </popup>
+  <popup>
+    <title>Active Pixels (y)</title>
+    <content>The number of pixels the image is partitioned into along the length of the y-axis.</content>
+    <link></link>
+  </popup>
+  <popup>
+    <title>Confocal Aperture Dimensions</title>
+    <content>The real space dimensions over which the excitation laser may be scanned, corresponding to maximum deflection angle of the scanning mirrors.</content>
+    <link></link>
+  </popup>
+  <popup>
+    <title>Virtual Pixel Size</title>
+    <content>The size of a single pixel in an image built using a point-scanning confocal system.</content>
+    <link></link>
+  </popup>
+</popups>

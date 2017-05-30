@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+
+<HEAD>
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <LINK REL="stylesheet" TYPE="text/css" HREF="css/NikUtil.css"/>
+    <LINK REL="stylesheet" TYPE="text/css" HREF="css/resCalc.css"/>
+
+<!-- for phonegap -->
+
+    
+    
+<!-- /for phonegap -->
+
+</HEAD>
+
+
+<BODY>
+    <DIV ID="mainTitle">Nikon μCalc</DIV>
+    
+
+    <DIV CLASS="row1">
+
+        <DIV CLASS="column darkGray">
+
+            <DIV CLASS="flex-grid-ctrl firstOffset">
+                <DIV CLASS="col-lbl popTarget">Objective:</DIV>
+                <DIV CLASS="col-ctrl">
+                    <DIV ID="objectiveSeg" CLASS="segment segFlex radioGroup">
+                        <DIV>4x</DIV>
+                        <DIV>10x</DIV>
+                        <DIV>20x</DIV>
+                        <DIV>40x</DIV>
+                        <DIV>60x</DIV>
+                        <DIV>100x</DIV>
+                        <DIV ID="customObjective">
+                            <INPUT TYPE="number" NAME="objective">
+                        </DIV>
+
+                    </DIV>
+                </DIV>
+            </DIV>
+
+            <DIV CLASS="flex-grid-ctrl">
+                <DIV CLASS="col-lbl popTarget">Media:</DIV>
+                <DIV CLASS="col-ctrl">
+                    <DIV ID="mediaSeg" CLASS="segment segFlex radioGroup">
+                        <DIV>Air</DIV>
+                        <DIV>Water</DIV>
+                        <DIV>Glycerol</DIV>
+                        <DIV>Oil</DIV>
+                    </DIV>
+                </DIV>
+            </DIV>
+
+            <DIV CLASS="flex-grid-ctrl">
+                <DIV CLASS="col-lbl popTarget">NA:</DIV>
+                <DIV CLASS="col-lbl">
+                    <INPUT TYPE="number" step="0.01" NAME="naText" />
+                </DIV>
+                <DIV CLASS="col-lbl">
+                    <DIV ID="naSldr" CLASS="sldr"></DIV>
+                </DIV>
+            </DIV>
+
+            <DIV CLASS="flex-grid-ctrl">
+                <DIV CLASS="col-lbl popTarget">Field of View:</DIV>
+                <DIV CLASS="col-lbl">
+                    <INPUT TYPE="number" step="1" NAME="fovText" /> mm
+                </DIV>
+                <DIV CLASS="col-lbl">
+                    <DIV ID="fovSldr" CLASS="sldr"></DIV>
+                </DIV>
+            </DIV>
+
+            <DIV CLASS="flex-grid-ctrl">
+                <DIV CLASS="col-lbl popTarget">Ex<sub>max</sub> / Em<sub>max</sub>:</DIV>
+                <DIV CLASS="col-ctrl">
+                    <INPUT TYPE="number" step="1" NAME="Ex" value="488" /> <span CLASS="nikYellow">nm /</span>
+                    <INPUT TYPE="number" step="1" NAME="Em" value="509" /> <span CLASS="nikYellow">nm </span>
+                </DIV>
+            </DIV>
+
+            <DIV ID="cameraSel" CLASS="flex-grid-ctrl">
+                <DIV CLASS="col-lbl popTarget">Camera:</DIV>
+                <DIV CLASS="col-ctrl">
+                    <FORM NAME="camera">
+                        <SELECT NAME="camera">
+                            <!--TO BE FILLED BY ResCalc.js-->
+                        </SELECT>
+                    </FORM>
+                </DIV>
+            </DIV>
+
+            <DIV ID="binning" CLASS="flex-grid-ctrl">
+                <DIV CLASS="col-lbl popTarget">Binning:</DIV>
+                <DIV CLASS="col-ctrl">
+                    <DIV ID="binningSeg" CLASS="segment segFlex radioGroup">
+                        <DIV>1</DIV>
+                        <DIV>2</DIV>
+                        <DIV>4</DIV>
+                    </DIV>
+                </DIV>
+            </DIV>
+
+            <DIV CLASS="flex-grid-ctrl">
+                <DIV ID="camLbl" CLASS="col-lbl popTarget">Camera Relay: </DIV>
+                <DIV CLASS="col-lbl">
+                    <INPUT TYPE="text" NAME="relayText" /> x
+                </DIV>
+                <DIV CLASS="col-lbl">
+                    <DIV ID="relaySldr" CLASS="sldr"></DIV>
+                </DIV>
+            </DIV>
+
+            <DIV CLASS="flex-grid-ctrl">
+                <DIV CLASS="col-lbl popTarget">Illumination:</DIV>
+                <DIV CLASS="col-ctrl">
+                    <DIV ID="illumSeg" CLASS="segment segFlex radioGroup">
+                        <DIV>Episcopic</DIV>
+                        <DIV>Diascopic</DIV>
+                    </DIV>
+                </DIV>
+            </DIV>
+
+
+            <DIV ID="diascopic">
+
+                <DIV CLASS="flex-grid-ctrl">
+                    <DIV CLASS="col-lbl popTarget">Condenser Media:</DIV>
+                    <DIV CLASS="col-ctrl">
+                        <DIV ID="conMediaSeg" CLASS="segment segFlex radioGroup">
+                            <DIV>Air</DIV>
+                            <DIV>Oil</DIV>
+                        </DIV>
+                    </DIV>
+                </DIV>
+
+                <DIV CLASS="flex-grid-ctrl">
+                    <DIV CLASS="col-lbl popTarget">Condenser NA:</DIV>
+                    <DIV CLASS="col-lbl">
+                        <INPUT TYPE="number" step="0.01" NAME="naConText" />
+                    </DIV>
+                    <DIV CLASS="col-lbl">
+                        <DIV ID="conSldr" CLASS="sldr"></DIV>
+                    </DIV>
+                </DIV>
+
+            </DIV>
+
+            <DIV ID="episcopic">
+                <DIV CLASS="flex-grid-ctrl">
+                    <DIV CLASS="col-lbl  popTarget">Modality:</DIV>
+                    <DIV CLASS="col-ctrl">
+                        <DIV ID="modalitySeg" CLASS="segment segFlex radioGroup">
+                            <DIV>Widefield</DIV>
+                            <DIV>Spinning Disk</DIV>
+                            <DIV>Point-Scanning</DIV>
+                        </DIV>
+                    </DIV>
+                </DIV>
+                <!-- SPINNING DISK OPTIONS-->
+                <DIV ID="spinningDiskCon">
+
+                    <DIV ID="model" CLASS="flex-grid-ctrl">
+                        <DIV CLASS="col-lbl">Model:</DIV>
+                        <DIV CLASS="col-ctrl">
+                            <DIV ID="modelSeg" CLASS="segment segFlex radioGroup">
+                                <DIV>CSU-X1</DIV>
+                                <DIV>CSU-W1</DIV>
+                                <DIV>X-Light</DIV>
+                            </DIV>
+                        </DIV>
+                    </DIV>
+
+                    <DIV ID="xLightPinhole" CLASS="flex-grid-ctrl">
+                        <DIV CLASS="col-lbl">Pinhole:</DIV>
+                        <DIV CLASS="col-ctrl">
+                            <DIV ID="xLightPinholeSeg" CLASS="segment segFlex radioGroup">
+                                <DIV>30&micro;m</DIV>
+                                <DIV>40&micro;m</DIV>
+                                <DIV>50&micro;m</DIV>
+                                <DIV>70&micro;m</DIV>
+                            </DIV>
+                        </DIV>
+                    </DIV>
+
+                    <DIV ID="w1Disk" CLASS="flex-grid-ctrl">
+                        <DIV CLASS="col-lbl">W1 Disk:</DIV>
+                        <DIV CLASS="col-ctrl">
+                            <DIV ID="w1DiskSeg" CLASS="segment segFlex radioGroup">
+                                <DIV>25&micro;m pinhole</DIV>
+                                <DIV>50&micro;m pinhole</DIV>
+                            </DIV>
+                        </DIV>
+                    </DIV>
+                </DIV>
+
+                <!--POINT SCANNING CONFOCAL OPTIONS-->
+                <DIV ID="pointScanConCon">
+
+                    <DIV ID="pointScanModel" CLASS="flex-grid-ctrl">
+                        <DIV CLASS="col-lbl  popTarget">Model:</DIV>
+                        <DIV CLASS="col-ctrl">
+                            <DIV ID="pointScanModelSeg" CLASS="segment segFlex radioGroup">
+                                <DIV>Nikon A1</DIV>
+                                <DIV>Nikon C2</DIV>
+                            </DIV>
+                        </DIV>
+                    </DIV>
+
+                    <DIV ID="activePix" CLASS="flex-grid-ctrl">
+                        <DIV CLASS="col-lbl popTarget">Active Pixels (x):</DIV>
+                        <DIV CLASS="col-ctrl">
+                            <DIV ID="activePixSeg" CLASS="segment segFlex radioGroup smallText">
+                                <DIV>64</DIV>
+                                <DIV>128</DIV>
+                                <DIV>256</DIV>
+                                <DIV>512</DIV>
+                                <DIV>1024</DIV>
+                                <DIV>2048</DIV>
+                                <DIV>4096</DIV>
+                            </DIV>
+                        </DIV>
+                    </DIV>
+
+                    <DIV ID="activePixY" CLASS="flex-grid-ctrl">
+                        <DIV CLASS="col-lbl popTarget">Active Pixels (y):</DIV>
+                        <DIV CLASS="col-ctrl">
+                            <INPUT TYPE="number" NAME="activeY" VALUE="512">
+                        </DIV>
+                    </DIV>
+
+                    <DIV ID="pointScanPinhole" CLASS="flex-grid-ctrl">
+                        <DIV CLASS="col-lbl twoLineLbl popTarget">Pinhole Diameter:</DIV>
+                        <DIV CLASS="col-ctrl">
+                            <DIV ID="psInputCon">
+                                <INPUT TYPE="number" NAME="pointScanPinholeInput" VALUE="50"><SPAN CLASS="nikYellow"> &micro;m</SPAN>
+                            </DIV>
+                            <DIV ID="pointScanPinSeg" CLASS="segment segFlex radioGroup">
+                                <DIV>20</DIV>
+                                <DIV>30</DIV>
+                                <DIV>40</DIV>
+                                <DIV>60</DIV>
+                                <DIV>90</DIV>
+                                <DIV>150</DIV>
+                            </DIV>
+                        </DIV>
+                    </DIV>
+
+                </DIV>
+
+            </DIV>
+            <DIV ID="moreInfoTog">More Info</DIV>
+            <a href="formulas.html"><DIV ID="formulaTog">Formula List</DIV></a>
+        </DIV>
+
+        <DIV CLASS="column lightGray">
+
+            <DIV ID="cameraDisp" CLASS="box boxShadow">
+                <H2 ID="camParamLbl">Camera Parameters</H2>
+                <DIV ID="camera"></DIV>
+                <DIV>
+                    <SPAN CLASS="popTarget">Active Pixels: </SPAN>
+                    <SPAN ID="activePixVal"></SPAN>
+                </DIV>
+                <DIV>
+                    <SPAN ID="pixSizeLbl" CLASS="popTarget"></SPAN>
+                    <SPAN ID="pixSizeVal"></SPAN>
+                </DIV>
+                <DIV ID="bpPixSizeCon">
+                    <SPAN ID="bpPixSizeLbl" CLASS="popTarget"></SPAN>
+                    <SPAN ID="bpPixSizeVal"></SPAN>
+                </DIV>
+                <DIV>
+                    <SPAN ID="sensorDimLbl" CLASS="popTarget"></SPAN>
+                    <SPAN ID="sensorDimVal"></SPAN>
+                </DIV>
+                <DIV ID="samplImaged">
+                    <SPAN CLASS="popTarget">Illuminated Sample Imaged: </SPAN><SPAN ID="samplUsed"></SPAN>
+                </DIV>
+            </DIV>
+
+            <DIV ID="microscopeDisp" CLASS="box boxShadow">
+                <H2>Microscope Parameters</H2>
+                <DIV ID="mode"></DIV>
+                <DIV>
+                    Objective: <SPAN ID="objective"></SPAN>
+                </DIV>
+                <DIV>
+                    <SPAN CLASS="popTarget">Total Magnification: </SPAN>
+                    <SPAN ID="totalMag"></SPAN>
+                </DIV>
+                <DIV>
+                    <SPAN CLASS="popTarget">Field of View: </SPAN>
+                    <SPAN ID="fieldOfView"> </SPAN> mm
+                </DIV>
+                <DIV>
+                    <SPAN CLASS="popTarget">Lateral Resolution: </SPAN>
+                    <SPAN ID="latRes"></SPAN>
+                </DIV>
+                <DIV>
+                    <SPAN CLASS="popTarget">Axial Resolution: </SPAN>
+                    <SPAN ID="axialRes"></SPAN>
+                </DIV>
+                <DIV>
+                    <SPAN CLASS="popTarget">Sampling Rate: </SPAN>
+                    <SPAN ID="sampleRate"></SPAN> pix / <em>r</em> <sub>Airy</sub>
+                </DIV>
+                <DIV>
+                    <SPAN CLASS="popTarget">Brightness:</SPAN>
+                    <SPAN ID="brightness"></SPAN>
+                </DIV>
+            </DIV>
+
+            <DIV ID="confocalDisp" CLASS="box boxShadow">
+                <H2>Confocal Parameters</H2>
+                <DIV>
+                    <SPAN CLASS="popTarget">Pinhole Diameter: </SPAN>
+                    <SPAN ID="pinholeDiameter"></SPAN>
+                </DIV>
+                <DIV>
+                    <SPAN CLASS="popTarget">Backprojected Pinhole Radius: </SPAN>
+                    <SPAN ID="backprojectedPinholeRadius"></SPAN>
+                </DIV>
+                <DIV>
+                    <SPAN CLASS="popTarget">Airy Units: </SPAN>
+                    <SPAN ID="pinholeSize"></SPAN>
+                </DIV>
+            </DIV>
+
+            <DIV CLASS="box boxShadow canvasCon">
+                <H2>Optical Pathway Simulation</H2>
+                <CANVAS ID="specCan" WIDTH="364" HEIGHT="240"></CANVAS>
+            </DIV>
+
+        </DIV>
+
+    </DIV>
+
+    <DIV ID="popup">
+        <H2 CLASS="title"></H2>
+        <BR />
+        <A CLASS="close" HREF="#">&times;</A>
+        <DIV CLASS="content blackText"></DIV>
+        <A ID="link">Here</A>
+    </DIV>
+</BODY>
+
+<SCRIPT TYPE="text/javascript" src="scripts/jquery-3.1.1.min.js"></SCRIPT>
+<SCRIPT TYPE="text/javascript" src="scripts/NikUtil.js"></SCRIPT>
+<SCRIPT TYPE="text/javascript" SRC="scripts/resCalc.js"></SCRIPT>
+<script type="text/javascript" src="cordova.js"></script>

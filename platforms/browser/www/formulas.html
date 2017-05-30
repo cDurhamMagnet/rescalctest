@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<HEAD>
+    <LINK REL="stylesheet" TYPE="text/css" HREF="css/formula.css"/>
+</HEAD>
+
+<BODY>
+<p>
+    <a href="#Mag">
+        <strong>Magnification</strong>
+    </a>
+</p>
+<p>
+    <a href="#PixReal">
+        <strong>Backprojected Pixel Size</strong>
+    </a>
+</p>
+<p>
+    <a href="#Lateral">
+        <strong>Lateral Resolution</strong>
+    </a>
+</p>
+<p>
+    <a href="#Axial">
+        <strong>Axial Resolution</strong>
+    </a>
+</p>
+<p>
+    <a href="#Sampling">
+        <strong>Sampling Rate</strong>
+    </a>
+</p>
+<p>
+    <a href="#Bright">
+        <strong>Brightness</strong>
+    </a>
+</p>
+<p>
+    <a href="#BPPR">
+        <strong>Backprojected Pinhole Radius</strong>
+    </a>
+</p>
+<p>
+    <a href="#AU">
+        <strong>Airy Units</strong>
+    </a>
+</p>
+<p>
+    <a ID="Mag"></a><strong>Magnification:</strong> When calculating image magnification, several variables must be considered. Primarily is objective magnification, <i>M<sub>obj</sub></i>. However, additional magnification may be introduced via other camera relay/zoom optics, denoted as <i>M<sub>relay</sub></i> herein. The total magnification of the system, <i>M<sub>tot</sub></i>, may be found using the following equation:
+</p>
+<p align="center">
+    <i>M<sub>tot</sub> = M<sub>obj</sub> * M<sub>relay</sub></i>
+</p>
+<p>Note that additional sources of image magnification are simply multiplied in like fashion.</p>
+<p>
+    <a ID="PixReal"></a><strong>Backprojected Pixel Size:</strong> Backprojected pixel size (widefield) and virtual pixel size (confocal) is the apparent de-magnified size of a single pixel back-projected into the specimen plane and represented by the variable <i>pix<sub>proj</sub></i>. This value is found simply by dividing the real pixel size, <i>pix<sub>real</sub></i>, by the total magnification of the system, <i>M<sub>tot</sub></i>:
+</p>
+<p align="center">
+    <img src="images/formula/BPPSformula.png"/>
+</p>
+
+<p>
+    <a ID="Lateral"></a><strong>Lateral Resolution:</strong> Lateral resolution refers to the optical resolution in the directions orthogonal to the optic axis of the imaging system, the x and y directions. For our purposes, we use the Rayleigh Criterion in order to estimate optical resolution.
+</p>
+<p>The Rayleigh Criterion is a generally accepted metric for determining the resolving power of an optical system. According to the Rayleigh Criterion, at least 26% contrast must exist between the images of two point emitters in order for each emitter to be considered optically resolved from the other. When considering the profile of two Airy Disks of similar intensity in a low noise environment, this translates to the global maximum of one Airy Disk overlapping with the first minimum of the adjacent Airy Disk.</p>
+<p>
+    For widefield imaging, the Rayleigh Criterion for lateral resolution, <i>r<sub>lat</sub></i>, may be expressed as:
+</p>
+<p align="center">
+    <img src="images/formula/latResFormula1.png"/>
+</p>
+
+<p>
+    Where <i>NA<sub>obj</sub></i> is the numerical aperture of the objective and <i>NA<sub>cond</sub></i> is the numerical aperture of the condenser. For the purposes of this tool <i>λ<sub>em</sub></i> (the emission wavelength) is assumed to be 546 nm for diascopic (transmitted light) imaging. This corresponds to the center wavelength of light allowed to pass through commonly used green interference filters.
+</p>
+<p>For widefield episcopic (reflected light) imaging, including epifluorescence, the objective also acts as the condenser. This allows us to simplify the above equation to:</p>
+
+<p align="center">
+    <img src="images/formula/latResFormula2.png"/>
+</p>
+
+<p>This equation changes when considering the lateral resolution of microscopes utilizing structured illumination patterns rather than widefield illumination. Specifically we address the increased resolution of spinning disk and point scanning confocal. In these cases lateral resolution is estimated using the following equation:</p>
+
+<p align="center">
+    <img src="images/formula/latResFormula3.png"/>
+</p>
+
+<p>Where:</p>
+
+<p align="center">
+    C = 0.2AU + 0.39
+</p>
+
+<p>
+    <i>r<sub>conf</sub></i> is the confocal lateral resolution, C is a constant, <i>λ<sub>ex</sub></i> is the excitation wavelength, and AU is the number of Airy Units corresponding to the selected pinhole diameter and excitation wavelength. Please note that <strong>this equation provides a coarse estimate </strong>of lateral resolution in a confocal microscope. In actuality, the relationship between pinhole diameter and lateral resolution is non-linear and not so simply modeled as above.
+</p>
+
+<p>
+    <a ID="Axial"></a><strong>Axial Resolution:</strong> Axial resolution refers to the optical resolution in the directions parallel to the optic axis, the z directions.
+</p>
+
+<p>
+    For widefield diascopic (transmitted light) imaging, the Rayleigh Criterion for axial resolution, <i>r<sub>ax</sub></i>, may be expressed as:
+</p>
+
+<p align="center">
+    <img src="images/formula/axialFormula1.png"/>
+</p>
+
+<p>
+    Where <i>n<sub>obj</sub></i> is the refractive index of the objective immersion medium, <i>n<sub>cond</sub></i> is the refractive index of the condenser immersion medium, <i>NA<sub>obj</sub></i> is the numerical aperture of the objective and <i>NA<sub>obj</sub></i> is the numerical aperture of the condenser. For the purposes of this tool <i>λ<sub>em</sub></i> (the emission wavelength) is once again assumed to be 546 nm for diascopic imaging.
+</p>
+
+<p>For widefield episcopic (reflected light) imaging, including epifluorescence, the objective acts as both the objective and condenser. This allows us to simplify the above equation to:</p>
+<p align="center">
+    <img src="images/formula/axialResFormula2.png"/>
+</p>
+
+<p>This equation changes when considering the axial resolution of point scanning and spinning disk confocals. Structured illumination allows for slightly increased resolution compared to the widefield case. We use the following equation to estimate axial resolution for confocal microscopes:</p>
+
+<p align="center">
+    <img src="images/formula/axialResFormula3.png"/>
+</p>
+
+<p>Given that:</p>
+
+<p align="center">
+    C = 0.32 AU + 0.43
+</p>
+
+<p>
+    Note that, as with estimating lateral resolution for confocal microscopes, <strong>values calculated using these equations are strictly coarse estimates</strong>. In reality, the relationship between pinhole diameter and axial resolution is non-linear.
+</p>
+
+<p>
+    <a ID="Sampling"></a><strong>Sampling Rate:</strong> This term originated in the field of signal processing and is formalized by the Nyquist-Shannon Sampling Criterion (NSSC). In simple terms, the NSSC states that in order for a given frequency to be reconstructed without losing information it must be sampled at least twice. For example, in the realm of digital imaging this means that if the calculated optical resolution of a given system is 200 nm, then the pixel size must be 100 nm or smaller in order to properly sample the finest available spatial details. In practice, the image must be sampled approximately 2.3 &ndash; 4 times in order to properly capture the finest available frequency information.
+</p>
+<p>
+    The sampling rate, <i>f<sub>s</sub></i>, may be calculated using the following equations:
+</p>
+
+<p align="center">
+    <img src="images/formula/sampFormula1.png"/>
+</p>
+
+<p align="center">or</p>
+
+<p align="center">
+    <img src="images/formula/sampFormula2.png"/>
+</p>
+
+<p>
+    Where <i>r<sub>lat</sub></i> is the lateral resolution in a widefield microscope, <i>r<sub>conf</sub></i> is the lateral resolution in a confocal microscope, and <i>pix<sub>proj</sub></i> is the back-projected pixel size.
+</p>
+
+<p>
+    <a ID="Bright"></a><strong>Brightness:</strong> Among many other factors, the microscope objective strongly influences the brightness of a recorded image. Brightness increases with higher Numerical Aperture (NA) and decreases with higher magnification. Note that the calculation for Brightness is different for transmitted and reflected light imaging as the former also requires a separate condenser for illumination.
+</p>
+
+<p>For diascopic (transmitted light) imaging, brightness may be calculated using the following equation:</p>
+<p align="center">
+    <img src="images/formula/brightnessFormula1.png"/>
+</p>
+<p>Where M is the magnification of the objective lens.</p>
+
+<p>For episcopic (reflected light) imaging, brightness may be calculated using the following equation:</p>
+<p align="center">
+    <img src="images/formula/brightnessFormula2.png"/>
+</p>
+<p>
+    <a ID="BPPR"></a><strong>Backprojected Pinhole Radius:</strong> Backprojected pinhole radius is the effective de-magnified size of the pinhole aperture(s) projected in the specimen plane and represented by the variable BPPR. This value is found simply by dividing the real pinhole radius, pinholeRadius, by the objective magnification, <i>M<sub>obj</sub></i>. Note that for the point-scanning confocal mode, users are not allowed to specify intermediate camera relay optics for additional magnification. This is because additional "magnification" in point-scanning confocal microscopes is generally performed using the "scan zoom' functionality. Scan zoom is realized simply by limiting the scan to a smaller area, not by introducing additional real magnification.
+</p>
+<p align="center">
+    <img src="images/formula/BPPRformula.png"/>
+</p>
+<p>
+    <a ID="AU"></a><strong>Airy Units:</strong> The radius of the Airy Disk formed by the image of an emitter with sub-resolution dimensions, also known as one Airy Unit (AU), is the distance from the central intensity maximum to the first minimum (first dark ring). Note that this is not the same as the full width at half maximum.
+</p>
+
+<p>In confocal microscopy systems, "Airy Units" generally refers to the ratio of the back-projected pinhole radius (BPPR) to the radius of the Airy Disk. Stronger optical sectioning is realized with decreasing BPPR relative to the Airy Disk radius. The number of Airy Units may thus be found using the equation:</p>
+
+<p align="center">
+    <img src="images/formula/auFormula.png"/>
+</p>
+
+<a href="index.html" class="back-to-top">Return To Calculator</a>
+</BODY>
+
+<SCRIPT TYPE="text/javascript" src="scripts/jquery-3.1.1.min.js"></SCRIPT>
